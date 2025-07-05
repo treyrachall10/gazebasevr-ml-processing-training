@@ -1,10 +1,16 @@
 # GazeBaseVR Machine Learning Project
 
 > **Disclaimer**  
-> I'm not a professional ML engineer — this project is part of my personal learning journey in AI and machine learning. The code may not follow best practices, and I'm still experimenting and improving. Feedback is welcome.
+> I'm not a professional ML engineer — this project is part of my personal learning journey in AI and machine learning.
+> 
+> The code may not follow best practices, and I'm still experimenting and improving. Feedback is welcome.
+> 
 > The models and processing scripts have only been written to work with the round 1 data from the GazeBaseVR dataset.
+> 
 > The code to save the models has not been implemented here. So feel free to add that code as you wish.
+> 
 > This script will only work if you have a proper GPU for training.
+
 ---
 
 ## Overview
