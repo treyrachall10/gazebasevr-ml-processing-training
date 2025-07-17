@@ -36,8 +36,8 @@ def createListOfR1Files(folder):
     return list_of_files
 
 # Starts processing for all files from round 1
-def ProcessAndSaveAllR1Files(norm_dir, round_one_files):
-    valid_dfs, valid_files = getValidR1Files(round_one_files)
+def ProcessAndSaveAllR1Files(norm_dir, round_one_dir, round_one_files):
+    valid_dfs, valid_files = getValidR1Files(round_one_dir, round_one_files)
     normalizeAndSave(norm_dir, valid_dfs, valid_files)
 
     return valid_files
@@ -55,6 +55,7 @@ def getValidR1Files(round_1_dir, round_one_files):
         original_len = len(df_raw)
         df = df_raw.dropna()
 
+        # Check if csv file has 1250 rows and has more than 90% valid rows
         if len(df) < 1250 or len(df) < 0.9 * original_len:
             print(f"Skipped (bad quality): {file}")
             continue
@@ -123,7 +124,7 @@ def getXY(input_dir, round_1_dir, norm_dir):
         moveAllR1Files(input_dir, round_1_dir)
     if len(os.listdir(norm_dir)) == 0:
         round_1_files = os.listdir(round_1_dir)
-        valid_files = ProcessAndSaveAllR1Files(norm_dir, createListOfR1Files(round_1_files))
+        valid_files = ProcessAndSaveAllR1Files(norm_dir, round_1_dir,createListOfR1Files(round_1_files))
     else:
         valid_files = [f for f in os.listdir(norm_dir) if f.endswith('.csv')]
     x, y = windowData(norm_dir, valid_files)
@@ -173,3 +174,4 @@ if __name__ == "__main__":
     make_output_dirs(norm_dir)
     x, y = getXY(input_dir, round_1_dir, norm_dir) # 2. X-Shape: [1250, 7] Y-Shape: [labels]
     printLabelInfo(y)
+
