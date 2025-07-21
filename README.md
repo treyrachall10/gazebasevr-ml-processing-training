@@ -10,6 +10,8 @@
 > The code to save the models has not been implemented here. So feel free to add that code as you wish.
 > 
 > This script will only work if you have a proper GPU for training.
+>
+> convert_raw_files_to_final_format.py was borrowed from the paper **"GazeBaseVR, a large-scale, longitudinal, binocular eye-tracking dataset collected in virtual reality"** and tweaked to allow for extra columns gotten for my experiment. This can be used to convert your data from rads to degrees. But is not needed if working directly with the GazeBaseVR dataset.
 
 ---
 
