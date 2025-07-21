@@ -1,7 +1,7 @@
 # GazeBaseVR Machine Learning Project
 
 > **Disclaimer**  
-> I'm not a professional ML engineer — this project is part of my personal learning journey in AI and machine learning.
+> I'm not a professional ML engineer — this project is part of my personal learning journey and research project in AI and machine learning.
 > 
 > The code may not follow best practices, and I'm still experimenting and improving. Feedback is welcome.
 > 
